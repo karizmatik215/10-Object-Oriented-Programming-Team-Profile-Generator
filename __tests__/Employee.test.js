@@ -1,4 +1,3 @@
-const { TestScheduler } = require('jest');
 const Employee = require('../lib/Employee');
 
 test('Employee Object', () => {
@@ -24,25 +23,25 @@ test('Can set email from constructor', () => {
   expect(employee.email).toBe(testEmail);
 });
 
-test('function getName()', () => {
+test('getName() method', () => {
   const testValue = 'Jared';
   const employee = new Employee(testValue);
   expect(employee.getName()).toBe(testValue);
 });
 
-test('function getId()', () => {
+test('getId() method', () => {
   const testGetId = 1;
   const employee = new Employee('Jared', testGetId);
   expect(employee.getId()).toBe(testGetId);
 });
 
-test('function getEmail()', () => {
+test('getEmail() method', () => {
   const testGetEmail = 'jared@fakemail.com';
   const employee = new Employee('Jared', 1, testGetEmail);
   expect(employee.getEmail()).toBe(testGetEmail);
 });
 
-test('function getRole()', () => {
+test('getRole() method', () => {
   const testGetRole = 'Employee';
   const employee = new Employee('Jared', 1, 'jared@fakemail.com');
   expect(employee.getRole()).toBe(testGetRole);
