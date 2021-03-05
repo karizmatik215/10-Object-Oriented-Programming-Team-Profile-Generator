@@ -12,14 +12,14 @@ test('Can set github account', () => {
 });
 
 test('getRole() method should return Engineer', () => {
-  const testGetRole = 'Engineer';
+  const testRole = 'Engineer';
   const employee = new Engineer(
     'Alec',
     2,
     'alec@fakemail.com',
     'randomusername'
   );
-  expect(employee.getRole()).toBe(testGetRole);
+  expect(employee.getRole()).toBe(testRole);
 });
 
 test('getGithub() method should get username', () => {
