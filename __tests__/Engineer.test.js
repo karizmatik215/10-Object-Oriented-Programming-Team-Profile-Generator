@@ -1,4 +1,3 @@
-const { TestScheduler } = require('@jest/core');
 const Engineer = require('../lib/Engineer');
 
 test('Can set github account', () => {
