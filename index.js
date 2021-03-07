@@ -17,7 +17,7 @@ function initApp() {
   addMember();
 }
 
-//Add Team members
+//Add Team members information from question responses
 function addMember() {
   inquirer
     .prompt([
@@ -90,6 +90,7 @@ function addMember() {
     });
 }
 
+//Template for creating HTML file
 function startHtml() {
   const html = `<!DOCTYPE html>
     <html lang="en">
@@ -97,13 +98,14 @@ function startHtml() {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/a695a3856f.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="/dist/styles.css">
-        <title>My Team</title>
+        <title>Team Profile Generator</title>
     </head>
     <body>
         <nav class="navbar navbar-dark bg-dark mb-5">
-            <span class="navbar-brand mb-0 h1 w-100 text-center">Team Profile Generator</span>
+            <span class="navbar-brand mb-3 mt-3 h1 w-100 text-center">My Team</span>
         </nav>
         <div class="container">
             <div class="row">`;
@@ -115,6 +117,7 @@ function startHtml() {
   console.log('Enter Team Member Information');
 }
 
+//Template for adding team members to html based on roles selected
 function addHtml(member) {
   return new Promise(function (resolve, reject) {
     const name = member.getName();
@@ -126,11 +129,11 @@ function addHtml(member) {
       const gitHub = member.getGithub();
       data = `<div class="col-4">
             <div class="card mx-auto mb-3" style="width: 18rem">
-            <h5 class="card-header">${name}<br /><br />Engineer</h5>
+            <h5 class="card-header">${name}<br /><br /><i class="fas fa-glasses"></i> Engineer</h5>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">ID: ${id}</li>
-                <li class="list-group-item">Email Address: ${email}</li>
-                <li class="list-group-item">GitHub: ${gitHub}</li>
+                <li class="list-group-item">Email:<a href="mailto:${email}" target="_blank"> ${email}</a></li>
+                <li class="list-group-item">GitHub:<a href="https://github.com/${gitHub}" target="_blank"> ${gitHub}</a></li>
             </ul>
             </div>
         </div>`;
@@ -138,10 +141,10 @@ function addHtml(member) {
       const school = member.getSchool();
       data = `<div class="col-4">
             <div class="card mx-auto mb-3" style="width: 18rem">
-            <h5 class="card-header">${name}<br /><br />Intern</h5>
+            <h5 class="card-header">${name}<br /><br /><i class="fas fa-user-graduate"></i> Intern</h5>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">ID: ${id}</li>
-                <li class="list-group-item">Email Address: ${email}</li>
+                <li class="list-group-item">Email:<a href="mailto:${email}" target="_blank"> ${email}</a></li>
                 <li class="list-group-item">School: ${school}</li>
             </ul>
             </div>
@@ -150,11 +153,11 @@ function addHtml(member) {
       const officeNumber = member.getOfficeNumber();
       data = `<div class="col-4">
             <div class="card mx-auto mb-3" style="width: 18rem">
-            <h5 class="card-header">${name}<br /><br />Manager</h5>
+            <h5 class="card-header">${name}<br /><br /><i class="fas fa-mug-hot"></i> Manager</h5>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">ID: ${id}</li>
-                <li class="list-group-item">Email Address: ${email}</li>
-                <li class="list-group-item">Office Phone: ${officeNumber}</li>
+                <li class="list-group-item">Email:<a href="mailto:${email}" target="_blank"> ${email}</a></li>
+                <li class="list-group-item">Office Number: ${officeNumber}</li>
             </ul>
             </div>
         </div>`;
@@ -169,6 +172,7 @@ function addHtml(member) {
   });
 }
 
+//add finishing tags to html file and log finished message
 function finishHtml() {
   const html = ` </div>
     </div>
