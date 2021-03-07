@@ -28,11 +28,15 @@ Build a Node.js command-line application that takes in information about employe
 node index.js
 ```
 
+![Team Generator walkthrough](./src/tpg_walkthrough.gif)
+
 ## Tests
 
 ```bash
 npm test
 ```
+
+![Team Generator tests](./src/teamprofilegeneratortests.gif)
 
 ## License
 
