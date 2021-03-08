@@ -174,9 +174,9 @@ function addHtml(member) {
 
 //add finishing tags to html file and log finished message
 function finishHtml() {
-  const html = ` </div>
-    </div>
-    
+  const html = `
+      </div>
+    </div>    
 </body>
 </html>`;
 
