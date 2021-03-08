@@ -104,7 +104,7 @@ function startHtml() {
         <title>Team Profile Generator</title>
     </head>
     <body>
-        <nav class="navbar navbar-dark bg-dark mb-5">
+        <nav class="navbar navbar-dark mb-5">
             <span class="navbar-brand mb-3 mt-3 h1 w-100 text-center">My Team</span>
         </nav>
         <div class="container">
@@ -128,39 +128,39 @@ function addHtml(member) {
     if (role === 'Engineer') {
       const gitHub = member.getGithub();
       data = `<div class="col-4">
-            <div class="card mx-auto mb-3" style="width: 18rem">
-            <h5 class="card-header">${name}<br /><br /><i class="fas fa-glasses"></i> Engineer</h5>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">ID: ${id}</li>
-                <li class="list-group-item">Email:<a href="mailto:${email}" target="_blank"> ${email}</a></li>
-                <li class="list-group-item">GitHub:<a href="https://github.com/${gitHub}" target="_blank"> ${gitHub}</a></li>
-            </ul>
-            </div>
-        </div>`;
+                <div class="card mx-auto mb-3 shadow" style="width: 18rem">
+                  <h5 class="card-header">${name}<br /><br /><i class="fas fa-glasses"></i> Engineer</h5>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">ID: ${id}</li>
+                      <li class="list-group-item">Email:<a href="mailto:${email}" target="_blank"> ${email}</a></li>
+                      <li class="list-group-item">GitHub:<a href="https://github.com/${gitHub}" target="_blank"> ${gitHub}</a></li>
+                    </ul>
+                </div>
+              </div>`;
     } else if (role === 'Intern') {
       const school = member.getSchool();
       data = `<div class="col-4">
-            <div class="card mx-auto mb-3" style="width: 18rem">
-            <h5 class="card-header">${name}<br /><br /><i class="fas fa-user-graduate"></i> Intern</h5>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">ID: ${id}</li>
-                <li class="list-group-item">Email:<a href="mailto:${email}" target="_blank"> ${email}</a></li>
-                <li class="list-group-item">School: ${school}</li>
-            </ul>
-            </div>
-        </div>`;
+                <div class="card mx-auto mb-3 shadow" style="width: 18rem">
+                  <h5 class="card-header">${name}<br /><br /><i class="fas fa-user-graduate"></i> Intern</h5>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">ID: ${id}</li>
+                      <li class="list-group-item">Email:<a href="mailto:${email}" target="_blank"> ${email}</a></li>
+                      <li class="list-group-item">School: ${school}</li>
+                    </ul>
+                </div>
+              </div>`;
     } else {
       const officeNumber = member.getOfficeNumber();
       data = `<div class="col-4">
-            <div class="card mx-auto mb-3" style="width: 18rem">
-            <h5 class="card-header">${name}<br /><br /><i class="fas fa-mug-hot"></i> Manager</h5>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">ID: ${id}</li>
-                <li class="list-group-item">Email:<a href="mailto:${email}" target="_blank"> ${email}</a></li>
-                <li class="list-group-item">Office Number: ${officeNumber}</li>
-            </ul>
-            </div>
-        </div>`;
+                <div class="card mx-auto mb-3 shadow" style="width: 18rem">
+                  <h5 class="card-header">${name}<br /><br /><i class="fas fa-mug-hot"></i> Manager</h5>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">ID: ${id}</li>
+                      <li class="list-group-item">Email:<a href="mailto:${email}" target="_blank"> ${email}</a></li>
+                      <li class="list-group-item">Office Number: ${officeNumber}</li>
+                    </ul>
+                </div>
+              </div>`;
     }
     console.log('Team Member Added');
     fs.appendFile('./dist/index.html', data, function (err) {
