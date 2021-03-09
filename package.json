@@ -6,5 +6,23 @@
   },
   "scripts": {
     "test": "jest"
-  }
+  },
+  "name": "10-object-oriented-programming-team-profile-generator",
+  "description": "![badge](https://img.shields.io/badge/License-MIT-blue?style=plastic)",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karizmatik215/10-Object-Oriented-Programming-Team-Profile-Generator.git"
+  },
+  "author": "Juan Sanchez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/karizmatik215/10-Object-Oriented-Programming-Team-Profile-Generator/issues"
+  },
+  "homepage": "https://github.com/karizmatik215/10-Object-Oriented-Programming-Team-Profile-Generator#readme"
 }
